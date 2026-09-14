@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giris Yap — Kuroverse</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+  <div id="kv-navbar"></div>
+
+  <main class="kv-page-enter">
+    <div class="kv-auth-wrap">
+      <div class="kv-auth-card">
+        <div class="kv-panel kv-panel-glow">
+          <h1>Tekrar Hos Geldin</h1>
+          <p>Kaldigin yerden izlemeye ve okumaya devam et.</p>
+          <div class="kv-error-msg" id="kv-form-error"></div>
+          <form id="kv-login-form">
+            <div class="kv-field">
+              <label>Kullanici Adi veya E-posta</label>
+              <input class="kv-input" name="identifier" type="text" required autocomplete="username" />
+            </div>
+            <div class="kv-field">
+              <label>Sifre</label>
+              <input class="kv-input" name="password" type="password" required autocomplete="current-password" />
+            </div>
+            <button type="submit" class="kv-btn kv-btn-primary kv-w-full" style="justify-content:center;">Giris Yap</button>
+          </form>
+          <p class="kv-auth-switch">Hesabin yok mu? <a href="/kayit.html">Hemen uye ol</a></p>
+          <p class="kv-auth-switch" style="opacity:0.7;">Demo admin: <b>admin</b> / <b>Admin123!</b></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="kv-footer"></div>
+
+  <script src="/assets/js/icons.js"></script>
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/effects.js"></script>
+  <script src="/assets/js/layout.js"></script>
+  <script src="/assets/js/auth.js"></script>
+</body>
+</html>

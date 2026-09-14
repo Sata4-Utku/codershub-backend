@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuroverse — Anime & Manga Evreni</title>
+  <meta name="description" content="Kuroverse: koyu temali, ozgun kurgusal anime izleme ve manga okuma platformu." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%226%22 fill=%22%23a855f7%22/></svg>" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+  <div id="kv-navbar"></div>
+
+  <main class="kv-page-enter">
+    <section class="kv-hero">
+      <div class="kv-hero-inner">
+        <span class="kv-hero-badge">✨ Tamamen ozgun kurgusal evren</span>
+        <h1>Karanlikta parlayan<br /><span class="grad">anime &amp; manga</span> deneyimi</h1>
+        <p>Kuroverse; kesfedilmeyi bekleyen ozgun animeler ve mangalarla dolu, koyu temali, akici animasyonlu bir platform. Izle, oku, seviye atla.</p>
+        <div class="kv-hero-actions">
+          <a href="/anime.html" class="kv-btn kv-btn-primary">Izlemeye Basla</a>
+          <a href="/manga.html" class="kv-btn kv-btn-ghost">Manga Kesfet</a>
+        </div>
+        <div class="kv-stats-strip" id="kv-home-stats">
+          <div class="kv-stat"><strong id="stat-anime">0</strong><span>Anime Serisi</span></div>
+          <div class="kv-stat"><strong id="stat-manga">0</strong><span>Manga Serisi</span></div>
+          <div class="kv-stat"><strong id="stat-ep">0</strong><span>Bolum</span></div>
+          <div class="kv-stat"><strong id="stat-genre">0</strong><span>Tur</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kv-section">
+      <div class="kv-container">
+        <div class="kv-ticker-wrap">
+          <div class="kv-ticker" id="kv-ticker"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kv-section">
+      <div class="kv-container">
+        <div class="kv-section-head kv-reveal">
+          <div>
+            <span class="kv-tag">Trend</span>
+            <h2>One Cikan Animeler</h2>
+            <p>Topluluk tarafindan en cok izlenen kurgusal seriler</p>
+          </div>
+          <a href="/anime.html" class="kv-btn kv-btn-ghost kv-btn-sm">Tumunu Gor</a>
+        </div>
+        <div class="kv-grid" id="kv-trend-anime"></div>
+      </div>
+    </section>
+
+    <section class="kv-section">
+      <div class="kv-container">
+        <div class="kv-section-head kv-reveal">
+          <div>
+            <span class="kv-tag">Populer</span>
+            <h2>Populer Mangalar</h2>
+            <p>Sayfa sayfa suruklenecegin ozgun manga hikayeleri</p>
+          </div>
+          <a href="/manga.html" class="kv-btn kv-btn-ghost kv-btn-sm">Tumunu Gor</a>
+        </div>
+        <div class="kv-grid" id="kv-trend-manga"></div>
+      </div>
+    </section>
+
+    <section class="kv-section">
+      <div class="kv-container">
+        <div class="kv-section-head kv-reveal">
+          <div>
+            <span class="kv-tag">Ozgun Ozellik</span>
+            <h2>Bugun Ruh Halin Nasil?</h2>
+            <p>Ruh haline gore ani anime/manga onerisi al — sadece Kuroverse'e ozel</p>
+          </div>
+        </div>
+        <div class="kv-panel kv-reveal">
+          <div class="kv-mood-grid" id="kv-mood-grid"></div>
+          <div id="kv-mood-result" style="margin-top:20px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kv-section">
+      <div class="kv-container">
+        <div class="kv-section-head kv-reveal">
+          <div>
+            <span class="kv-tag">Neden Kuroverse</span>
+            <h2>Platformun Ozellikleri</h2>
+          </div>
+        </div>
+        <div class="kv-feature-grid" id="kv-features"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="kv-footer"></div>
+
+  <script src="/assets/js/icons.js"></script>
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/effects.js"></script>
+  <script src="/assets/js/cards.js"></script>
+  <script src="/assets/js/mood.js"></script>
+  <script src="/assets/js/layout.js"></script>
+  <script src="/assets/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oku — Kuroverse</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+  <div id="kv-navbar"></div>
+
+  <main class="kv-page-enter">
+    <section class="kv-detail-hero">
+      <div class="kv-detail-banner" id="kv-detail-banner" style="background: linear-gradient(120deg, #38bdf8, #a855f7);"></div>
+      <div class="kv-container">
+        <div class="kv-detail-grid">
+          <div class="kv-detail-cover" id="kv-detail-cover" style="background: linear-gradient(150deg, #38bdf8, #a855f7);"></div>
+          <div class="kv-detail-info" id="kv-detail-info">
+            <div class="kv-skel" style="height:32px;width:60%;border-radius:8px;margin-bottom:14px;"></div>
+            <div class="kv-skel" style="height:14px;width:40%;border-radius:8px;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kv-section" style="padding-top:10px;">
+      <div class="kv-container">
+        <div class="kv-section-head">
+          <div>
+            <span class="kv-tag">Okuyucu</span>
+            <h2 id="kv-chapter-title">Bolum</h2>
+          </div>
+          <div class="kv-filterbar" id="kv-chapter-select" style="margin:0;"></div>
+        </div>
+
+        <div class="kv-reader">
+          <div class="kv-manga-page" id="kv-manga-page">
+            <canvas id="kv-manga-canvas" style="width:100%;height:100%;display:block;"></canvas>
+          </div>
+          <div class="kv-reader-controls">
+            <button class="kv-icon-btn" id="kv-page-prev" title="Onceki sayfa">
+              <svg class="kv-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <span class="kv-reader-page-indicator" id="kv-page-indicator">1 / 1</span>
+            <button class="kv-icon-btn" id="kv-page-next" title="Sonraki sayfa">
+              <svg class="kv-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="kv-footer"></div>
+
+  <script src="/assets/js/icons.js"></script>
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/effects.js"></script>
+  <script src="/assets/js/cards.js"></script>
+  <script src="/assets/js/layout.js"></script>
+  <script src="/assets/js/read.js"></script>
+</body>
+</html>

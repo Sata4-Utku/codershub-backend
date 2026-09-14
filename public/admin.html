@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Paneli — Kuroverse</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+  <div id="kv-navbar"></div>
+
+  <main class="kv-page-enter">
+    <section class="kv-section" style="padding-top:40px;">
+      <div class="kv-container">
+        <div class="kv-section-head">
+          <div>
+            <span class="kv-tag">Yonetim</span>
+            <h2>Admin Kontrol Paneli</h2>
+            <p>Icerikleri, bolumleri ve kullanicilari tek yerden yonet.</p>
+          </div>
+        </div>
+
+        <div class="kv-admin-layout">
+          <div class="kv-admin-side">
+            <button class="active" data-section="dashboard">Genel Bakis</button>
+            <button data-section="anime">Anime Yonetimi</button>
+            <button data-section="manga">Manga Yonetimi</button>
+            <button data-section="users">Kullanicilar</button>
+          </div>
+          <div id="kv-admin-content"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="kv-footer"></div>
+
+  <div class="kv-modal-backdrop" id="kv-anime-modal-backdrop">
+    <div class="kv-modal">
+      <div class="kv-modal-head">
+        <h3 id="kv-anime-modal-title">Yeni Anime</h3>
+        <button class="kv-icon-btn" id="kv-anime-modal-close">
+          <svg class="kv-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <form id="kv-anime-form">
+        <div class="kv-field"><label>Baslik</label><input class="kv-input" name="title" required /></div>
+        <div class="kv-field-row">
+          <div class="kv-field"><label>Yil</label><input class="kv-input" name="year" type="number" /></div>
+          <div class="kv-field"><label>Puan (0-10)</label><input class="kv-input" name="rating" type="number" step="0.1" min="0" max="10" /></div>
+        </div>
+        <div class="kv-field-row">
+          <div class="kv-field"><label>Durum</label>
+            <select class="kv-input" name="status">
+              <option>Devam Ediyor</option>
+              <option>Tamamlandi</option>
+            </select>
+          </div>
+          <div class="kv-field"><label>Studio</label><input class="kv-input" name="studio" /></div>
+        </div>
+        <div class="kv-field"><label>Turler (virgulle ayirin)</label><input class="kv-input" name="genres" placeholder="Aksiyon, Fantastik" /></div>
+        <div class="kv-field-row">
+          <div class="kv-field"><label>Ikon</label>
+            <select class="kv-input" name="icon">
+              <option value="sword">Kilic</option>
+              <option value="moon">Ay</option>
+              <option value="flower">Cicek</option>
+              <option value="flame">Alev</option>
+              <option value="star">Yildiz</option>
+              <option value="mask">Maske</option>
+            </select>
+          </div>
+          <div class="kv-field"><label>Kapak Renkleri</label>
+            <div class="kv-flex kv-gap-8"><input class="kv-input" name="gradient1" type="color" value="#a855f7" style="padding:4px;" /><input class="kv-input" name="gradient2" type="color" value="#ec4899" style="padding:4px;" /></div>
+          </div>
+        </div>
+        <div class="kv-field"><label>Ozet</label><textarea class="kv-input" name="synopsis" rows="3"></textarea></div>
+        <button type="submit" class="kv-btn kv-btn-primary kv-w-full" style="justify-content:center;">Kaydet</button>
+      </form>
+      <div id="kv-anime-episode-manager" class="kv-hidden" style="margin-top:24px; border-top:1px solid var(--border); padding-top:20px;">
+        <h4 style="margin:0 0 12px;">Bolumler</h4>
+        <div id="kv-anime-episode-list" class="kv-ep-list" style="margin-bottom:14px;"></div>
+        <form id="kv-episode-form" class="kv-field-row" style="align-items:flex-end;">
+          <div class="kv-field" style="margin:0;"><label>Bolum Basligi</label><input class="kv-input" name="title" required /></div>
+          <div class="kv-field" style="margin:0;"><label>Sure</label><input class="kv-input" name="duration" placeholder="24 dk" /></div>
+          <button type="submit" class="kv-btn kv-btn-ghost kv-btn-sm">Ekle</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="kv-modal-backdrop" id="kv-manga-modal-backdrop">
+    <div class="kv-modal">
+      <div class="kv-modal-head">
+        <h3 id="kv-manga-modal-title">Yeni Manga</h3>
+        <button class="kv-icon-btn" id="kv-manga-modal-close">
+          <svg class="kv-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <form id="kv-manga-form">
+        <div class="kv-field"><label>Baslik</label><input class="kv-input" name="title" required /></div>
+        <div class="kv-field-row">
+          <div class="kv-field"><label>Yil</label><input class="kv-input" name="year" type="number" /></div>
+          <div class="kv-field"><label>Puan (0-10)</label><input class="kv-input" name="rating" type="number" step="0.1" min="0" max="10" /></div>
+        </div>
+        <div class="kv-field-row">
+          <div class="kv-field"><label>Durum</label>
+            <select class="kv-input" name="status">
+              <option>Devam Ediyor</option>
+              <option>Tamamlandi</option>
+            </select>
+          </div>
+          <div class="kv-field"><label>Yazar</label><input class="kv-input" name="author" /></div>
+        </div>
+        <div class="kv-field"><label>Turler (virgulle ayirin)</label><input class="kv-input" name="genres" placeholder="Fantastik, Dram" /></div>
+        <div class="kv-field-row">
+          <div class="kv-field"><label>Ikon</label>
+            <select class="kv-input" name="icon">
+              <option value="sword">Kilic</option>
+              <option value="moon">Ay</option>
+              <option value="flower">Cicek</option>
+              <option value="flame">Alev</option>
+              <option value="star">Yildiz</option>
+              <option value="mask">Maske</option>
+            </select>
+          </div>
+          <div class="kv-field"><label>Kapak Renkleri</label>
+            <div class="kv-flex kv-gap-8"><input class="kv-input" name="gradient1" type="color" value="#38bdf8" style="padding:4px;" /><input class="kv-input" name="gradient2" type="color" value="#a855f7" style="padding:4px;" /></div>
+          </div>
+        </div>
+        <div class="kv-field"><label>Ozet</label><textarea class="kv-input" name="synopsis" rows="3"></textarea></div>
+        <button type="submit" class="kv-btn kv-btn-primary kv-w-full" style="justify-content:center;">Kaydet</button>
+      </form>
+      <div id="kv-manga-chapter-manager" class="kv-hidden" style="margin-top:24px; border-top:1px solid var(--border); padding-top:20px;">
+        <h4 style="margin:0 0 12px;">Bolumler</h4>
+        <div id="kv-manga-chapter-list" class="kv-ep-list" style="margin-bottom:14px;"></div>
+        <form id="kv-chapter-form" class="kv-field-row" style="align-items:flex-end;">
+          <div class="kv-field" style="margin:0;"><label>Bolum Basligi</label><input class="kv-input" name="title" required /></div>
+          <div class="kv-field" style="margin:0;"><label>Sayfa Sayisi</label><input class="kv-input" name="pages" type="number" placeholder="18" /></div>
+          <button type="submit" class="kv-btn kv-btn-ghost kv-btn-sm">Ekle</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/icons.js"></script>
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/effects.js"></script>
+  <script src="/assets/js/cards.js"></script>
+  <script src="/assets/js/layout.js"></script>
+  <script src="/assets/js/admin.js"></script>
+</body>
+</html>

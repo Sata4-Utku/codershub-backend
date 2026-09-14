@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uye Ol — Kuroverse</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+  <div id="kv-navbar"></div>
+
+  <main class="kv-page-enter">
+    <div class="kv-auth-wrap">
+      <div class="kv-auth-card">
+        <div class="kv-panel kv-panel-glow">
+          <h1>Kuroverse'e Katil</h1>
+          <p>Hesabini olustur, favori listeni kur, seriyi baslat.</p>
+          <div class="kv-error-msg" id="kv-form-error"></div>
+          <form id="kv-register-form">
+            <div class="kv-field">
+              <label>Kullanici Adi</label>
+              <input class="kv-input" name="username" type="text" minlength="3" required autocomplete="username" />
+            </div>
+            <div class="kv-field">
+              <label>E-posta</label>
+              <input class="kv-input" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="kv-field">
+              <label>Sifre</label>
+              <input class="kv-input" name="password" type="password" minlength="6" required autocomplete="new-password" />
+            </div>
+            <div class="kv-field">
+              <label>Sifre (Tekrar)</label>
+              <input class="kv-input" name="confirm" type="password" minlength="6" required autocomplete="new-password" />
+            </div>
+            <button type="submit" class="kv-btn kv-btn-primary kv-w-full" style="justify-content:center;">Hesap Olustur</button>
+          </form>
+          <p class="kv-auth-switch">Zaten hesabin var mi? <a href="/giris.html">Giris yap</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="kv-footer"></div>
+
+  <script src="/assets/js/icons.js"></script>
+  <script src="/assets/js/api.js"></script>
+  <script src="/assets/js/effects.js"></script>
+  <script src="/assets/js/layout.js"></script>
+  <script src="/assets/js/auth.js"></script>
+</body>
+</html>

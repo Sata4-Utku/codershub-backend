@@ -1,4 +1,4 @@
-// Kuroverse — rozet tanimlari (backend/utils/badges.js ile eslesir)
+// Anidox — rozet tanimlari (backend/utils/badges.js ile eslesir)
 const KV_ALL_BADGES = [
   { id: 'first-step', label: 'Ilk Adim', min: 1, icon: 'star' },
   { id: 'bronze-otaku', label: 'Bronz Otaku', min: 5, icon: 'flame' },

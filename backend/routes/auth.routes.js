@@ -8,7 +8,7 @@ const { requireAuth } = require('../middleware/auth.middleware');
 
 const router = express.Router();
 
-const COOKIE_NAME = 'kuroverse_token';
+const COOKIE_NAME = 'anidox_token';
 const COOKIE_OPTS = {
   httpOnly: true,
   sameSite: 'lax',

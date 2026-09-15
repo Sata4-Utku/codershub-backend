@@ -1,7 +1,7 @@
 {
-  "name": "kuroverse-backend",
+  "name": "anidox-backend",
   "version": "1.0.0",
-  "description": "Kuroverse - Anime & Manga platformu icin backend API ve statik site sunucusu",
+  "description": "Anidox - Anime & Manga platformu icin backend API ve statik site sunucusu",
   "main": "server.js",
   "type": "commonjs",
   "scripts": {

@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const SECRET = process.env.JWT_SECRET || 'kuroverse-dev-secret';
+const SECRET = process.env.JWT_SECRET || 'anidox-dev-secret';
 const EXPIRES_IN = process.env.JWT_EXPIRES_IN || '7d';
 
 function signToken(payload) {

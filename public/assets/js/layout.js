@@ -1,4 +1,4 @@
-// Kuroverse — ortak navbar / footer / auth durumu
+// Anidox — ortak navbar / footer / auth durumu
 
 let KV_USER = null;
 
@@ -42,8 +42,8 @@ function kvRenderNavbar() {
     <nav class="kv-nav">
       <div class="kv-nav-inner">
         <a href="/index.html" class="kv-logo">
-          <span class="kv-logo-mark">${kvIcon('mask', 19)}</span>
-          Kuroverse
+          <span class="kv-logo-mark">${kvLogoMark(20)}</span>
+          Anidox
         </a>
         <div class="kv-nav-links" id="kv-nav-links">${links}</div>
         <div class="kv-nav-actions">
@@ -95,7 +95,7 @@ function kvRenderFooter() {
         <div class="kv-footer-grid">
           <div>
             <div class="kv-logo" style="margin-bottom:14px;">
-              <span class="kv-logo-mark">${kvIcon('mask', 19)}</span>Kuroverse
+              <span class="kv-logo-mark">${kvLogoMark(20)}</span>Anidox
             </div>
             <p>Koyu temali, tamamen ozgun kurgusal anime ve manga evreni. Izle, oku, seviye atla.</p>
             <div class="kv-social-row" style="margin-top:14px;">
@@ -129,13 +129,13 @@ function kvRenderFooter() {
           </div>
         </div>
         <div class="kv-copyright-note">
-          <strong>Icerik bildirimi:</strong> Kuroverse uzerindeki tum anime, manga, karakter ve gorsel ogeler
+          <strong>Icerik bildirimi:</strong> Anidox uzerindeki tum anime, manga, karakter ve gorsel ogeler
           bu proje icin ozel olarak uretilmis kurgusal ve ozgun iceriklerdir. Gercek studyo, yayinevi veya
           yazarlarla hicbir bagi yoktur; hicbir ucuncu taraf telifli materyal kullanilmamistir.
         </div>
         <div class="kv-footer-bottom">
-          <span>&copy; ${year} <strong>Kuroverse</strong>. Tum haklari saklidir.</span>
-          <span>Ozgun tasarim ve gelistirme: Kuroverse Ekibi</span>
+          <span>&copy; ${year} <strong>Anidox</strong>. Tum haklari saklidir.</span>
+          <span>Ozgun tasarim ve gelistirme: Anidox Ekibi</span>
         </div>
       </div>
     </footer>

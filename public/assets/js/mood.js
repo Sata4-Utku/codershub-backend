@@ -1,4 +1,4 @@
-// Kuroverse — ozgun ozellik: ruh haline gore anime/manga onerisi
+// Anidox — ozgun ozellik: ruh haline gore anime/manga onerisi
 const KV_MOODS = [
   { key: 'epik', emoji: '⚔️', label: 'Epik', genres: ['Aksiyon', 'Fantastik', 'Mecha'] },
   { key: 'romantik', emoji: '🌸', label: 'Romantik', genres: ['Romantik', 'Slice of Life', 'Drama'] },

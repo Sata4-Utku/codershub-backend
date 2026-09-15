@@ -1,4 +1,4 @@
-// Kuroverse - orijinal, elle cizilmis cizgisel ikon seti (harici gorsel/telifli varlik kullanilmaz)
+// Anidox - orijinal, elle cizilmis cizgisel ikon seti (harici gorsel/telifli varlik kullanilmaz)
 const KV_ICONS = {
   sword: '<path d="M4 20L15 9M15 9l2.5-2.5a1.5 1.5 0 0 1 2.12 0l.88.88a1.5 1.5 0 0 1 0 2.12L18 12M15 9l3 3M6 18l2 2M4.5 19.5l1-1"/>',
   moon: '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
@@ -30,4 +30,13 @@ const KV_ICONS = {
 function kvIcon(name, size = 22) {
   const body = KV_ICONS[name] || KV_ICONS.star;
   return `<svg class="kv-icon" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${body}</svg>`;
+}
+
+// Anidox marka amblemi: hilal ay + katana kesigi (ozgun, tek seferlik logo cizimi)
+function kvLogoMark(size = 20) {
+  return `<svg class="kv-icon" width="${size}" height="${size}" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 10C30.7 10 15 25.7 15 45s15.7 35 35 35c8.6 0 16.5-3.1 22.6-8.2-3.6 1.1-7.5 1.7-11.6 1.7C40.2 73.5 25 58.3 25 39.5c0-11.8 6-22.2 15.1-28.3C40.1 11.1 40 11 39.9 10.9 43.1 10.3 46.5 10 50 10z" fill="currentColor"/>
+    <path d="M30 82L82 20" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+    <path d="M77 13l12 7-7 12-11-8z" fill="currentColor"/>
+  </svg>`;
 }

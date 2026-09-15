@@ -145,7 +145,7 @@ function drawMangaPage(canvas, seed, gradient, icon) {
   ctx.fillStyle = 'rgba(255,255,255,0.35)';
   ctx.font = '600 11px system-ui, sans-serif';
   ctx.textAlign = 'right';
-  ctx.fillText('Kuroverse', w - 10, h - 10);
+  ctx.fillText('Anidox', w - 10, h - 10);
 }
 
 function kvRoundRect(ctx, x, y, w, h, r) {
@@ -191,7 +191,7 @@ async function kvInitReader() {
   }
   window.KV_READ_SET = readSet;
 
-  document.title = manga.title + ' — Kuroverse';
+  document.title = manga.title + ' — Anidox';
   const [c1, c2] = manga.gradient;
   document.getElementById('kv-detail-banner').style.background = `linear-gradient(120deg, ${c1}, ${c2})`;
   const cover = document.getElementById('kv-detail-cover');

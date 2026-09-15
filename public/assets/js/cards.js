@@ -1,4 +1,4 @@
-// Kuroverse — anime/manga kart bileşenleri (orijinal SVG-tabanli kapak gorselleri)
+// Anidox — anime/manga kart bileşenleri (orijinal SVG-tabanli kapak gorselleri)
 
 function kvGradientStyle(gradient) {
   const [a, b] = gradient && gradient.length === 2 ? gradient : ['#7c3aed', '#ec4899'];

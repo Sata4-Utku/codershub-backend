@@ -1,4 +1,4 @@
-// Kuroverse — animasyon ve gorsel efekt yardimcilari
+// Anidox — animasyon ve gorsel efekt yardimcilari
 
 function kvInitBackground() {
   const bg = document.createElement('div');
@@ -26,33 +26,38 @@ function kvInitBackground() {
 function kvStarfield(canvas) {
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  let w, h, stars;
+  let w, h, embers;
+  const palette = ['#ff5555', '#e81c33', '#ff8a65', '#fca5a5'];
 
   function resize() {
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
-    const count = Math.floor((w * h) / 9000);
-    stars = Array.from({ length: count }, () => ({
+    const count = Math.floor((w * h) / 11000);
+    embers = Array.from({ length: count }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
-      r: Math.random() * 1.4 + 0.3,
-      speed: Math.random() * 0.15 + 0.03,
-      twinkle: Math.random() * Math.PI * 2
+      r: Math.random() * 1.6 + 0.4,
+      speed: Math.random() * 0.35 + 0.08,
+      drift: (Math.random() - 0.5) * 0.3,
+      twinkle: Math.random() * Math.PI * 2,
+      color: palette[Math.floor(Math.random() * palette.length)]
     }));
   }
 
   function draw() {
     ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = '#fff';
-    for (const s of stars) {
-      s.twinkle += 0.02;
-      const alpha = 0.35 + Math.sin(s.twinkle) * 0.35;
+    for (const s of embers) {
+      s.twinkle += 0.025;
+      const alpha = 0.25 + Math.sin(s.twinkle) * 0.3;
       ctx.globalAlpha = Math.max(0, alpha);
+      ctx.fillStyle = s.color;
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
       ctx.fill();
-      s.y += s.speed;
-      if (s.y > h) { s.y = 0; s.x = Math.random() * w; }
+      // yukselen kor efekti
+      s.y -= s.speed;
+      s.x += s.drift;
+      if (s.y < -10) { s.y = h + 10; s.x = Math.random() * w; }
     }
     ctx.globalAlpha = 1;
     requestAnimationFrame(draw);
@@ -61,6 +66,57 @@ function kvStarfield(canvas) {
   window.addEventListener('resize', resize);
   resize();
   draw();
+}
+
+function kvInitCardTilt() {
+  let activeCard = null;
+
+  document.addEventListener('pointermove', (e) => {
+    const card = e.target.closest ? e.target.closest('.kv-card') : null;
+    if (card !== activeCard) {
+      if (activeCard) { activeCard.style.transform = ''; activeCard.style.transition = ''; }
+      if (card) card.style.transition = 'box-shadow 0.35s var(--ease), border-color .3s';
+      activeCard = card;
+    }
+    if (!card || window.innerWidth < 700) return;
+    const rect = card.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `perspective(700px) rotateX(${(-py * 8).toFixed(2)}deg) rotateY(${(px * 10).toFixed(2)}deg) translateY(-8px) scale(1.02)`;
+  });
+
+  document.addEventListener('pointerleave', (e) => {
+    const card = e.target.closest ? e.target.closest('.kv-card') : null;
+    if (card) {
+      card.style.transition = 'transform 0.4s var(--ease), box-shadow 0.35s var(--ease), border-color .3s';
+      card.style.transform = '';
+    }
+  }, true);
+}
+
+function kvInitParallax() {
+  const orbs = () => document.querySelectorAll('.kv-orb');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    orbs().forEach((orb, i) => {
+      const speed = 0.05 + i * 0.03;
+      orb.style.marginTop = (y * speed).toFixed(1) + 'px';
+    });
+  }, { passive: true });
+}
+
+function kvInitPageLoader() {
+  const bar = document.createElement('div');
+  bar.className = 'kv-loadbar';
+  document.body.appendChild(bar);
+  requestAnimationFrame(() => {
+    bar.style.width = '70%';
+  });
+  window.addEventListener('load', () => {
+    bar.style.width = '100%';
+    setTimeout(() => bar.remove(), 400);
+  });
+  setTimeout(() => { bar.style.width = '100%'; setTimeout(() => bar.remove(), 400); }, 1200);
 }
 
 function kvInitScrollReveal() {
@@ -141,12 +197,26 @@ function kvToast(message, type = 'success') {
 function kvCardInAnim(container) {
   const cards = container.querySelectorAll('.kv-card');
   cards.forEach((card, i) => {
-    setTimeout(() => card.classList.add('kv-in'), i * 60);
+    // kv-visible burada dogrudan verilir: kart kv-reveal tasisa da tasimasa da,
+    // IntersectionObserver'in ayrica cagrilmasini beklemeden goruntulenir.
+    setTimeout(() => { card.classList.add('kv-in'); card.classList.add('kv-visible'); }, i * 60);
   });
 }
+
+// Giris animasyonu bitince CSS animasyonunu birakiyoruz ki
+// hover-tilt icin sonradan verilen inline transform gecerli olabilsin
+// (aktif bir CSS animasyonu inline transform'dan daha yuksek onceliklidir).
+document.addEventListener('animationend', (e) => {
+  if (e.animationName === 'kv-card-in') {
+    e.target.style.animation = 'none';
+  }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   kvInitBackground();
   kvInitRipple();
   kvInitNavScroll();
+  kvInitCardTilt();
+  kvInitParallax();
+  kvInitPageLoader();
 });

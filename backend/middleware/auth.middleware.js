@@ -2,7 +2,7 @@ const { verifyToken } = require('../utils/token');
 const { readDB } = require('../db');
 
 function requireAuth(req, res, next) {
-  const token = req.cookies && req.cookies.kuroverse_token;
+  const token = req.cookies && req.cookies.anidox_token;
   if (!token) {
     return res.status(401).json({ error: 'Oturum bulunamadi. Lutfen giris yapin.' });
   }
@@ -28,7 +28,7 @@ function requireAdmin(req, res, next) {
 }
 
 function attachUserIfPresent(req, res, next) {
-  const token = req.cookies && req.cookies.kuroverse_token;
+  const token = req.cookies && req.cookies.anidox_token;
   if (!token) return next();
   try {
     const payload = verifyToken(token);

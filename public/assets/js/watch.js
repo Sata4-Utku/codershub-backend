@@ -45,7 +45,7 @@ async function kvInitWatch() {
     } catch (e) {}
   }
 
-  document.title = anime.title + ' — Kuroverse';
+  document.title = anime.title + ' — Anidox';
 
   const [c1, c2] = anime.gradient;
   document.getElementById('kv-detail-banner').style.background = `linear-gradient(120deg, ${c1}, ${c2})`;

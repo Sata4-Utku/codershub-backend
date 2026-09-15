@@ -1,4 +1,4 @@
-// Kuroverse — katalog (anime.html / manga.html) ortak mantigi
+// Anidox — katalog (anime.html / manga.html) ortak mantigi
 // window.KV_CATALOG_TYPE 'anime' veya 'manga' olarak sayfa icinde tanimlanir
 
 async function kvInitCatalog() {

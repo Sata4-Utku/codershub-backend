@@ -5,112 +5,259 @@
       "id": "an-1",
       "title": "Kagerou Requiem",
       "slug": "kagerou-requiem",
-      "genres": ["Aksiyon", "Fantastik", "Dram"],
+      "genres": [
+        "Aksiyon",
+        "Fantastik",
+        "Dram"
+      ],
       "year": 2024,
       "status": "Devam Ediyor",
       "rating": 9.2,
       "studio": "Studio Hitodama",
       "icon": "sword",
-      "gradient": ["#7c3aed", "#ec4899"],
+      "gradient": [
+        "#e81c33",
+        "#3f0509"
+      ],
       "synopsis": "Ruhu ikiye bolunmus genc bir samurai, kayip golgesini geri almak icin efsanevi Kagerou diyarinda tehlikeli bir yolculuga cikar.",
       "episodes": [
-        { "id": "an-1-ep-1", "number": 1, "title": "Bolunmus Ruh", "duration": "24 dk" },
-        { "id": "an-1-ep-2", "number": 2, "title": "Golge Avcisi", "duration": "23 dk" },
-        { "id": "an-1-ep-3", "number": 3, "title": "Kirmizi Ay Altinda", "duration": "24 dk" },
-        { "id": "an-1-ep-4", "number": 4, "title": "Ihanetin Tadi", "duration": "25 dk" }
+        {
+          "id": "an-1-ep-1",
+          "number": 1,
+          "title": "Bolunmus Ruh",
+          "duration": "24 dk"
+        },
+        {
+          "id": "an-1-ep-2",
+          "number": 2,
+          "title": "Golge Avcisi",
+          "duration": "23 dk"
+        },
+        {
+          "id": "an-1-ep-3",
+          "number": 3,
+          "title": "Kirmizi Ay Altinda",
+          "duration": "24 dk"
+        },
+        {
+          "id": "an-1-ep-4",
+          "number": 4,
+          "title": "Ihanetin Tadi",
+          "duration": "25 dk"
+        }
       ]
     },
     {
       "id": "an-2",
       "title": "Void Walkers: Genesis",
       "slug": "void-walkers-genesis",
-      "genres": ["Bilim Kurgu", "Macera"],
+      "genres": [
+        "Bilim Kurgu",
+        "Macera"
+      ],
       "year": 2023,
       "status": "Tamamlandi",
       "rating": 8.7,
       "studio": "Nova Frame",
       "icon": "star",
-      "gradient": ["#06b6d4", "#6366f1"],
+      "gradient": [
+        "#b91c1c",
+        "#111111"
+      ],
       "synopsis": "Boslugun derinliklerinde uyanan bir kasif ekibi, evrenin sinirlarini asindiran gizemli bir enerjinin pesine duser.",
       "episodes": [
-        { "id": "an-2-ep-1", "number": 1, "title": "Uyanis", "duration": "22 dk" },
-        { "id": "an-2-ep-2", "number": 2, "title": "Sonsuzluk Kapisi", "duration": "23 dk" },
-        { "id": "an-2-ep-3", "number": 3, "title": "Yildiz Tozu", "duration": "22 dk" }
+        {
+          "id": "an-2-ep-1",
+          "number": 1,
+          "title": "Uyanis",
+          "duration": "22 dk"
+        },
+        {
+          "id": "an-2-ep-2",
+          "number": 2,
+          "title": "Sonsuzluk Kapisi",
+          "duration": "23 dk"
+        },
+        {
+          "id": "an-2-ep-3",
+          "number": 3,
+          "title": "Yildiz Tozu",
+          "duration": "22 dk"
+        }
       ]
     },
     {
       "id": "an-3",
       "title": "Sakura Static",
       "slug": "sakura-static",
-      "genres": ["Romantik", "Slice of Life"],
+      "genres": [
+        "Romantik",
+        "Slice of Life"
+      ],
       "year": 2022,
       "status": "Tamamlandi",
       "rating": 8.9,
       "studio": "Petal Works",
       "icon": "flower",
-      "gradient": ["#f472b6", "#fb923c"],
+      "gradient": [
+        "#f43f5e",
+        "#7a0c14"
+      ],
       "synopsis": "Kucuk bir sahil kasabasinda, radyo dalgalari araciligiyla birbirine baglanan iki lise ogrencisinin mevsimlik hikayesi.",
       "episodes": [
-        { "id": "an-3-ep-1", "number": 1, "title": "Ilk Frekans", "duration": "24 dk" },
-        { "id": "an-3-ep-2", "number": 2, "title": "Yaz Ruzgari", "duration": "24 dk" },
-        { "id": "an-3-ep-3", "number": 3, "title": "Sessiz Mesaj", "duration": "23 dk" },
-        { "id": "an-3-ep-4", "number": 4, "title": "Kiraz Cicekleri", "duration": "25 dk" },
-        { "id": "an-3-ep-5", "number": 5, "title": "Son Yayin", "duration": "24 dk" }
+        {
+          "id": "an-3-ep-1",
+          "number": 1,
+          "title": "Ilk Frekans",
+          "duration": "24 dk"
+        },
+        {
+          "id": "an-3-ep-2",
+          "number": 2,
+          "title": "Yaz Ruzgari",
+          "duration": "24 dk"
+        },
+        {
+          "id": "an-3-ep-3",
+          "number": 3,
+          "title": "Sessiz Mesaj",
+          "duration": "23 dk"
+        },
+        {
+          "id": "an-3-ep-4",
+          "number": 4,
+          "title": "Kiraz Cicekleri",
+          "duration": "25 dk"
+        },
+        {
+          "id": "an-3-ep-5",
+          "number": 5,
+          "title": "Son Yayin",
+          "duration": "24 dk"
+        }
       ]
     },
     {
       "id": "an-4",
       "title": "Iron Phantom Blade",
       "slug": "iron-phantom-blade",
-      "genres": ["Aksiyon", "Mecha"],
+      "genres": [
+        "Aksiyon",
+        "Mecha"
+      ],
       "year": 2024,
       "status": "Devam Ediyor",
       "rating": 8.4,
       "studio": "Gearheart Animation",
       "icon": "mask",
-      "gradient": ["#f43f5e", "#0f172a"],
+      "gradient": [
+        "#991b1b",
+        "#050505"
+      ],
       "synopsis": "Harabeye donmus bir metropolde, hayalet bir pilotun kontrol ettigi efsanevi mekanik zirh sehrin son umudu olur.",
       "episodes": [
-        { "id": "an-4-ep-1", "number": 1, "title": "Pas Tutmus Zirh", "duration": "24 dk" },
-        { "id": "an-4-ep-2", "number": 2, "title": "Devre Disi", "duration": "24 dk" },
-        { "id": "an-4-ep-3", "number": 3, "title": "Hayalet Protokolu", "duration": "23 dk" }
+        {
+          "id": "an-4-ep-1",
+          "number": 1,
+          "title": "Pas Tutmus Zirh",
+          "duration": "24 dk"
+        },
+        {
+          "id": "an-4-ep-2",
+          "number": 2,
+          "title": "Devre Disi",
+          "duration": "24 dk"
+        },
+        {
+          "id": "an-4-ep-3",
+          "number": 3,
+          "title": "Hayalet Protokolu",
+          "duration": "23 dk"
+        }
       ]
     },
     {
       "id": "an-5",
       "title": "Neon Ronin",
       "slug": "neon-ronin",
-      "genres": ["Aksiyon", "Siber Punk"],
+      "genres": [
+        "Aksiyon",
+        "Siber Punk"
+      ],
       "year": 2021,
       "status": "Tamamlandi",
-      "rating": 9.0,
+      "rating": 9,
       "studio": "Glitch Forge",
       "icon": "sword",
-      "gradient": ["#a855f7", "#22d3ee"],
+      "gradient": [
+        "#ff2b4d",
+        "#18181b"
+      ],
       "synopsis": "Neon isiklarla yikanan bir gelecek sehrinde, efendisiz kalmis bir yapay zeka samurai kendi kaderini sorgular.",
       "episodes": [
-        { "id": "an-5-ep-1", "number": 1, "title": "Sifir Protokol", "duration": "24 dk" },
-        { "id": "an-5-ep-2", "number": 2, "title": "Dijital Bushido", "duration": "24 dk" },
-        { "id": "an-5-ep-3", "number": 3, "title": "Kirik Katana", "duration": "25 dk" },
-        { "id": "an-5-ep-4", "number": 4, "title": "Son Duello", "duration": "26 dk" }
+        {
+          "id": "an-5-ep-1",
+          "number": 1,
+          "title": "Sifir Protokol",
+          "duration": "24 dk"
+        },
+        {
+          "id": "an-5-ep-2",
+          "number": 2,
+          "title": "Dijital Bushido",
+          "duration": "24 dk"
+        },
+        {
+          "id": "an-5-ep-3",
+          "number": 3,
+          "title": "Kirik Katana",
+          "duration": "25 dk"
+        },
+        {
+          "id": "an-5-ep-4",
+          "number": 4,
+          "title": "Son Duello",
+          "duration": "26 dk"
+        }
       ]
     },
     {
       "id": "an-6",
       "title": "Whispering Blossoms",
       "slug": "whispering-blossoms",
-      "genres": ["Fantastik", "Gizem"],
+      "genres": [
+        "Fantastik",
+        "Gizem"
+      ],
       "year": 2020,
       "status": "Tamamlandi",
       "rating": 8.5,
       "studio": "Moonlit Frame",
       "icon": "moon",
-      "gradient": ["#38bdf8", "#818cf8"],
+      "gradient": [
+        "#b91c1c",
+        "#27272a"
+      ],
       "synopsis": "Ay isigi altinda acan cicekler, buyulu bir ormanin derinliklerinde saklanan kadim bir sirri fisildar.",
       "episodes": [
-        { "id": "an-6-ep-1", "number": 1, "title": "Ormanin Cagrisi", "duration": "23 dk" },
-        { "id": "an-6-ep-2", "number": 2, "title": "Fisildayan Yapraklar", "duration": "24 dk" },
-        { "id": "an-6-ep-3", "number": 3, "title": "Kayip Tapinak", "duration": "24 dk" }
+        {
+          "id": "an-6-ep-1",
+          "number": 1,
+          "title": "Ormanin Cagrisi",
+          "duration": "23 dk"
+        },
+        {
+          "id": "an-6-ep-2",
+          "number": 2,
+          "title": "Fisildayan Yapraklar",
+          "duration": "24 dk"
+        },
+        {
+          "id": "an-6-ep-3",
+          "number": 3,
+          "title": "Kayip Tapinak",
+          "duration": "24 dk"
+        }
       ]
     }
   ],
@@ -119,110 +266,246 @@
       "id": "mg-1",
       "title": "Crimson Ink Chronicles",
       "slug": "crimson-ink-chronicles",
-      "genres": ["Aksiyon", "Doganustu"],
+      "genres": [
+        "Aksiyon",
+        "Doganustu"
+      ],
       "year": 2023,
       "status": "Devam Ediyor",
       "rating": 9.1,
       "author": "R. Kurotani",
       "icon": "flame",
-      "gradient": ["#ef4444", "#7c2d12"],
+      "gradient": [
+        "#ef4444",
+        "#450a0a"
+      ],
       "synopsis": "Kanla yazilan bir gunlugun sahibi, gecmisinin lanetiyle yuzlesirken karanlik bir kardesligin pesine duser.",
       "chapters": [
-        { "id": "mg-1-ch-1", "number": 1, "title": "Kirmizi Murekkep", "pages": 18 },
-        { "id": "mg-1-ch-2", "number": 2, "title": "Lanetli Sayfalar", "pages": 20 },
-        { "id": "mg-1-ch-3", "number": 3, "title": "Kardeslik Yemini", "pages": 22 }
+        {
+          "id": "mg-1-ch-1",
+          "number": 1,
+          "title": "Kirmizi Murekkep",
+          "pages": 18
+        },
+        {
+          "id": "mg-1-ch-2",
+          "number": 2,
+          "title": "Lanetli Sayfalar",
+          "pages": 20
+        },
+        {
+          "id": "mg-1-ch-3",
+          "number": 3,
+          "title": "Kardeslik Yemini",
+          "pages": 22
+        }
       ]
     },
     {
       "id": "mg-2",
       "title": "Moonlit Alchemist",
       "slug": "moonlit-alchemist",
-      "genres": ["Fantastik", "Macera"],
+      "genres": [
+        "Fantastik",
+        "Macera"
+      ],
       "year": 2022,
       "status": "Tamamlandi",
       "rating": 8.8,
       "author": "H. Amamiya",
       "icon": "moon",
-      "gradient": ["#6366f1", "#a855f7"],
+      "gradient": [
+        "#7a0c14",
+        "#1c1917"
+      ],
       "synopsis": "Gececi bir simyager, ay isigiyla beslenen nadir bir elementi bulmak icin yasakli topraklara adim atar.",
       "chapters": [
-        { "id": "mg-2-ch-1", "number": 1, "title": "Ay Tozu", "pages": 19 },
-        { "id": "mg-2-ch-2", "number": 2, "title": "Yasakli Formul", "pages": 21 },
-        { "id": "mg-2-ch-3", "number": 3, "title": "Simya Kapisi", "pages": 20 },
-        { "id": "mg-2-ch-4", "number": 4, "title": "Son Damla", "pages": 23 }
+        {
+          "id": "mg-2-ch-1",
+          "number": 1,
+          "title": "Ay Tozu",
+          "pages": 19
+        },
+        {
+          "id": "mg-2-ch-2",
+          "number": 2,
+          "title": "Yasakli Formul",
+          "pages": 21
+        },
+        {
+          "id": "mg-2-ch-3",
+          "number": 3,
+          "title": "Simya Kapisi",
+          "pages": 20
+        },
+        {
+          "id": "mg-2-ch-4",
+          "number": 4,
+          "title": "Son Damla",
+          "pages": 23
+        }
       ]
     },
     {
       "id": "mg-3",
       "title": "Static Heart",
       "slug": "static-heart",
-      "genres": ["Romantik", "Drama"],
+      "genres": [
+        "Romantik",
+        "Drama"
+      ],
       "year": 2024,
       "status": "Devam Ediyor",
       "rating": 8.6,
       "author": "Y. Todoroki",
       "icon": "flower",
-      "gradient": ["#f472b6", "#c026d3"],
+      "gradient": [
+        "#e11d48",
+        "#4c0519"
+      ],
       "synopsis": "Elektrikli bir sehirde tanisan iki ruh, kalp atislarini senkronize eden gizemli bir bagla birbirine baglanir.",
       "chapters": [
-        { "id": "mg-3-ch-1", "number": 1, "title": "Ilk Sinyal", "pages": 17 },
-        { "id": "mg-3-ch-2", "number": 2, "title": "Statik Gurultu", "pages": 18 },
-        { "id": "mg-3-ch-3", "number": 3, "title": "Senkron", "pages": 19 }
+        {
+          "id": "mg-3-ch-1",
+          "number": 1,
+          "title": "Ilk Sinyal",
+          "pages": 17
+        },
+        {
+          "id": "mg-3-ch-2",
+          "number": 2,
+          "title": "Statik Gurultu",
+          "pages": 18
+        },
+        {
+          "id": "mg-3-ch-3",
+          "number": 3,
+          "title": "Senkron",
+          "pages": 19
+        }
       ]
     },
     {
       "id": "mg-4",
       "title": "Ashfall Samurai",
       "slug": "ashfall-samurai",
-      "genres": ["Aksiyon", "Tarihi"],
+      "genres": [
+        "Aksiyon",
+        "Tarihi"
+      ],
       "year": 2021,
       "status": "Tamamlandi",
       "rating": 9.3,
       "author": "K. Ibaraki",
       "icon": "sword",
-      "gradient": ["#f97316", "#1f2937"],
+      "gradient": [
+        "#f97316",
+        "#1c1917"
+      ],
       "synopsis": "Kulu dusmus bir savasci, kulle kaplanmis topraklarda onurunu geri kazanmak icin son bir sefere cikar.",
       "chapters": [
-        { "id": "mg-4-ch-1", "number": 1, "title": "Kul Yagmuru", "pages": 20 },
-        { "id": "mg-4-ch-2", "number": 2, "title": "Kirik Kilic", "pages": 21 },
-        { "id": "mg-4-ch-3", "number": 3, "title": "Son Onur", "pages": 24 },
-        { "id": "mg-4-ch-4", "number": 4, "title": "Kulden Dogan", "pages": 22 }
+        {
+          "id": "mg-4-ch-1",
+          "number": 1,
+          "title": "Kul Yagmuru",
+          "pages": 20
+        },
+        {
+          "id": "mg-4-ch-2",
+          "number": 2,
+          "title": "Kirik Kilic",
+          "pages": 21
+        },
+        {
+          "id": "mg-4-ch-3",
+          "number": 3,
+          "title": "Son Onur",
+          "pages": 24
+        },
+        {
+          "id": "mg-4-ch-4",
+          "number": 4,
+          "title": "Kulden Dogan",
+          "pages": 22
+        }
       ]
     },
     {
       "id": "mg-5",
       "title": "Paper Moon Detective",
       "slug": "paper-moon-detective",
-      "genres": ["Gizem", "Komedi"],
+      "genres": [
+        "Gizem",
+        "Komedi"
+      ],
       "year": 2023,
       "status": "Devam Ediyor",
       "rating": 8.3,
       "author": "S. Fujimori",
       "icon": "mask",
-      "gradient": ["#facc15", "#0ea5e9"],
+      "gradient": [
+        "#b91c1c",
+        "#292524"
+      ],
       "synopsis": "Kagit fenerlerle aydinlanan bir sehirde, tuhaf vakalari cozen genc bir dedektifin gunlugu.",
       "chapters": [
-        { "id": "mg-5-ch-1", "number": 1, "title": "Kayip Fener", "pages": 16 },
-        { "id": "mg-5-ch-2", "number": 2, "title": "Kagit Iz", "pages": 17 },
-        { "id": "mg-5-ch-3", "number": 3, "title": "Gizli Muhur", "pages": 18 }
+        {
+          "id": "mg-5-ch-1",
+          "number": 1,
+          "title": "Kayip Fener",
+          "pages": 16
+        },
+        {
+          "id": "mg-5-ch-2",
+          "number": 2,
+          "title": "Kagit Iz",
+          "pages": 17
+        },
+        {
+          "id": "mg-5-ch-3",
+          "number": 3,
+          "title": "Gizli Muhur",
+          "pages": 18
+        }
       ]
     },
     {
       "id": "mg-6",
       "title": "Glasswing",
       "slug": "glasswing",
-      "genres": ["Fantastik", "Dram"],
+      "genres": [
+        "Fantastik",
+        "Dram"
+      ],
       "year": 2020,
       "status": "Tamamlandi",
       "rating": 8.9,
       "author": "N. Aozora",
       "icon": "star",
-      "gradient": ["#38bdf8", "#f0abfc"],
+      "gradient": [
+        "#fb7185",
+        "#44030a"
+      ],
       "synopsis": "Cam kanatlari olan bir kizin, kirilmadan ucmayi ogrenmeye calistigi kirilgan ama umut dolu bir hikaye.",
       "chapters": [
-        { "id": "mg-6-ch-1", "number": 1, "title": "Ilk Cirpinis", "pages": 15 },
-        { "id": "mg-6-ch-2", "number": 2, "title": "Kirilma Noktasi", "pages": 18 },
-        { "id": "mg-6-ch-3", "number": 3, "title": "Ruzgarin Sesi", "pages": 20 }
+        {
+          "id": "mg-6-ch-1",
+          "number": 1,
+          "title": "Ilk Cirpinis",
+          "pages": 15
+        },
+        {
+          "id": "mg-6-ch-2",
+          "number": 2,
+          "title": "Kirilma Noktasi",
+          "pages": 18
+        },
+        {
+          "id": "mg-6-ch-3",
+          "number": 3,
+          "title": "Ruzgarin Sesi",
+          "pages": 20
+        }
       ]
     }
   ]

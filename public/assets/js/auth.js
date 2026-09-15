@@ -48,7 +48,7 @@ async function kvInitRegisterPage() {
       const confirm = form.confirm.value;
       if (password !== confirm) throw new Error('Sifreler eslesmiyor.');
       await kvApi.register(username, email, password);
-      kvToast('Hesabin olusturuldu! Kuroverse\'e hos geldin.', 'success');
+      kvToast('Hesabin olusturuldu! Anidox\'e hos geldin.', 'success');
       setTimeout(() => (window.location.href = '/profil.html'), 500);
     } catch (err) {
       kvShowFormError(err.message);

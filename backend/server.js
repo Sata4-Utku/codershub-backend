@@ -23,7 +23,7 @@ function ensureAdminSeed() {
   if (hasAdmin) return;
 
   const username = process.env.ADMIN_USERNAME || 'admin';
-  const email = process.env.ADMIN_EMAIL || 'admin@kuroverse.dev';
+  const email = process.env.ADMIN_EMAIL || 'admin@anidox.dev';
   const password = process.env.ADMIN_PASSWORD || 'Admin123!';
 
   const admin = {
@@ -42,7 +42,7 @@ function ensureAdminSeed() {
   };
   db.users.push(admin);
   writeDB(db);
-  console.log(`[Kuroverse] Admin hesabi olusturuldu -> kullanici adi: "${username}", sifre: "${password}"`);
+  console.log(`[Anidox] Admin hesabi olusturuldu -> kullanici adi: "${username}", sifre: "${password}"`);
 }
 
 app.use(cors({ origin: true, credentials: true }));
@@ -56,7 +56,7 @@ app.use('/api/user', userRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
 
-app.get('/api/health', (req, res) => res.json({ ok: true, name: 'Kuroverse API' }));
+app.get('/api/health', (req, res) => res.json({ ok: true, name: 'Anidox API' }));
 
 const PUBLIC_DIR = path.join(__dirname, '..', 'public');
 app.use(express.static(PUBLIC_DIR));
@@ -73,5 +73,5 @@ app.use((req, res) => {
 ensureAdminSeed();
 
 app.listen(PORT, () => {
-  console.log(`[Kuroverse] Sunucu http://localhost:${PORT} adresinde calisiyor.`);
+  console.log(`[Anidox] Sunucu http://localhost:${PORT} adresinde calisiyor.`);
 });

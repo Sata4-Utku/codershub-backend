@@ -1,21 +1,21 @@
 /* ==========================================================================
-   Kuroverse — Anime & Manga Platformu
+   Anidox — Anime & Manga Platformu
    Ozgun tasarim sistemi: koyu tema, neon vurgular, cam efektli kartlar
    ========================================================================== */
 
 :root {
-  --bg-0: #07070d;
-  --bg-1: #0d0d18;
-  --bg-2: #13131f;
-  --surface: rgba(255, 255, 255, 0.045);
-  --surface-strong: rgba(255, 255, 255, 0.08);
-  --border: rgba(255, 255, 255, 0.09);
-  --text-0: #f4f2ff;
-  --text-1: #c7c3dd;
-  --text-2: #8b87a6;
-  --accent-1: #a855f7;
-  --accent-2: #ec4899;
-  --accent-3: #22d3ee;
+  --bg-0: #060303;
+  --bg-1: #0e0707;
+  --bg-2: #170a0a;
+  --surface: rgba(255, 245, 245, 0.045);
+  --surface-strong: rgba(255, 245, 245, 0.09);
+  --border: rgba(255, 80, 80, 0.14);
+  --text-0: #f7ecec;
+  --text-1: #cfb8b8;
+  --text-2: #937c7c;
+  --accent-1: #e81c33;
+  --accent-2: #7a0c14;
+  --accent-3: #ff5555;
   --accent-grad: linear-gradient(135deg, var(--accent-1), var(--accent-2));
   --accent-grad-2: linear-gradient(135deg, var(--accent-3), var(--accent-1));
   --danger: #f43f5e;
@@ -23,7 +23,7 @@
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 22px;
-  --shadow-glow: 0 0 40px rgba(168, 85, 247, 0.25);
+  --shadow-glow: 0 0 40px rgba(232, 28, 51, 0.3);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -43,6 +43,16 @@ body {
 
 ::selection { background: var(--accent-1); color: #fff; }
 
+/* ---------- Sayfa yukleme cubugu ---------- */
+.kv-loadbar {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: var(--accent-grad);
+  box-shadow: 0 0 12px rgba(232, 28, 51, 0.8);
+  z-index: 999;
+  transition: width 0.4s ease-out, opacity 0.3s ease 0.2s;
+}
+.kv-loadbar[style*="100%"] { opacity: 0; }
+
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-0); }
 ::-webkit-scrollbar-thumb { background: linear-gradient(var(--accent-1), var(--accent-2)); border-radius: 10px; }
@@ -59,9 +69,9 @@ button { font-family: inherit; }
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(ellipse 60% 40% at 15% 10%, rgba(168, 85, 247, 0.16), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 20%, rgba(34, 211, 238, 0.12), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(236, 72, 153, 0.12), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 15% 10%, rgba(232, 28, 51, 0.2), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 20%, rgba(122, 12, 20, 0.22), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(180, 20, 30, 0.16), transparent 60%),
     var(--bg-0);
 }
 .kv-bg canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.55; }
@@ -92,7 +102,7 @@ button { font-family: inherit; }
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.14), transparent 70%);
+  background: radial-gradient(circle, rgba(232, 28, 51, 0.18), transparent 70%);
   transform: translate(-50%, -50%);
   transition: opacity 0.3s ease;
   opacity: 0;
@@ -110,7 +120,7 @@ button { font-family: inherit; }
   top: 0;
   z-index: 100;
   backdrop-filter: blur(16px) saturate(140%);
-  background: rgba(7, 7, 13, 0.7);
+  background: rgba(6, 3, 3, 0.78);
   border-bottom: 1px solid var(--border);
   transition: box-shadow 0.3s var(--ease);
 }
@@ -142,7 +152,7 @@ button { font-family: inherit; }
   border-radius: 10px;
   display: grid; place-items: center;
   background: var(--accent-grad);
-  box-shadow: 0 0 18px rgba(168,85,247,0.5);
+  box-shadow: 0 0 18px rgba(232,28,51,0.5);
   color: #fff;
   flex-shrink: 0;
 }
@@ -191,8 +201,12 @@ button { font-family: inherit; }
   transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease), background 0.22s, border-color .2s;
   white-space: nowrap;
 }
-.kv-btn-primary { background: var(--accent-grad); color: #fff; box-shadow: 0 8px 24px rgba(168,85,247,0.35); }
-.kv-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(168,85,247,0.5); }
+.kv-btn-primary { background: var(--accent-grad); color: #fff; box-shadow: 0 8px 24px rgba(232,28,51,0.35); animation: kv-btn-pulse 2.8s ease-in-out infinite; }
+.kv-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(232,28,51,0.6); animation-play-state: paused; }
+@keyframes kv-btn-pulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(232,28,51,0.3); }
+  50% { box-shadow: 0 8px 28px rgba(232,28,51,0.6); }
+}
 .kv-btn-ghost { background: var(--surface); color: var(--text-0); border-color: var(--border); }
 .kv-btn-ghost:hover { border-color: var(--accent-1); transform: translateY(-2px); }
 .kv-btn-danger { background: rgba(244,63,94,0.15); color: #fda4af; border-color: rgba(244,63,94,0.35); }
@@ -221,7 +235,7 @@ button { font-family: inherit; }
   .kv-nav-links.open {
     display: flex; flex-direction: column;
     position: fixed; top: 66px; left: 0; right: 0;
-    background: rgba(10,10,18,0.97);
+    background: rgba(8, 4, 4, 0.97);
     backdrop-filter: blur(20px);
     padding: 14px; gap: 4px;
     border-bottom: 1px solid var(--border);
@@ -254,7 +268,53 @@ button { font-family: inherit; }
 .kv-hero {
   padding: 90px 0 60px;
   position: relative;
+  overflow: hidden;
 }
+
+/* Ozgun gorsel: hilal ay + kilic siluet illustrasyonu */
+.kv-hero-art {
+  position: absolute;
+  top: 50%; right: -60px;
+  transform: translateY(-50%);
+  width: min(46vw, 460px);
+  opacity: 0.85;
+  z-index: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 0 50px rgba(232, 28, 51, 0.35));
+  animation: kv-hero-art-float 9s ease-in-out infinite;
+}
+.kv-hero-moon { animation: kv-moon-glow 4s ease-in-out infinite; transform-origin: center; }
+.kv-hero-blade { animation: kv-blade-glint 3.2s ease-in-out infinite; transform-origin: center; }
+.kv-hero-embers circle {
+  animation: kv-ember-rise 3.6s ease-in infinite;
+  transform-origin: center;
+}
+.kv-hero-embers circle:nth-child(1) { animation-delay: 0s; }
+.kv-hero-embers circle:nth-child(2) { animation-delay: .5s; }
+.kv-hero-embers circle:nth-child(3) { animation-delay: 1s; }
+.kv-hero-embers circle:nth-child(4) { animation-delay: 1.5s; }
+.kv-hero-embers circle:nth-child(5) { animation-delay: 2s; }
+.kv-hero-embers circle:nth-child(6) { animation-delay: 2.5s; }
+.kv-hero-embers circle:nth-child(7) { animation-delay: 3s; }
+
+@keyframes kv-hero-art-float {
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  50% { transform: translateY(-54%) rotate(-1.5deg); }
+}
+@keyframes kv-moon-glow {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(255,85,85,0.5)); }
+  50% { filter: drop-shadow(0 0 22px rgba(255,85,85,0.9)); }
+}
+@keyframes kv-blade-glint {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; filter: drop-shadow(0 0 10px rgba(255,240,240,0.8)); }
+}
+@keyframes kv-ember-rise {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateY(-90px) scale(0.3); opacity: 0; }
+}
+@media (max-width: 900px) { .kv-hero-art { display: none; } }
 .kv-hero-inner { max-width: 1240px; margin: 0 auto; padding: 0 20px; text-align: center; }
 .kv-hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
@@ -377,7 +437,7 @@ button { font-family: inherit; }
   transition: transform .2s, color .2s, background .2s;
 }
 .kv-card-fav:hover { transform: scale(1.12); }
-.kv-card-fav.active { color: var(--accent-2); background: rgba(236,72,153,0.2); }
+.kv-card-fav.active { color: var(--accent-1); background: rgba(232,28,51,0.25); }
 
 .kv-card-body { padding: 14px 14px 16px; }
 .kv-card-title { font-weight: 700; font-size: 0.95rem; margin: 0 0 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -406,7 +466,7 @@ button { font-family: inherit; }
   padding: 11px 16px; border-radius: 999px; font-size: 0.9rem;
   transition: border-color .2s, box-shadow .2s; min-width: 0;
 }
-.kv-input:focus { outline: none; border-color: var(--accent-1); box-shadow: 0 0 0 3px rgba(168,85,247,0.2); }
+.kv-input:focus { outline: none; border-color: var(--accent-1); box-shadow: 0 0 0 3px rgba(232,28,51,0.2); }
 .kv-search-wrap { position: relative; flex: 1; min-width: 180px; }
 .kv-search-wrap .kv-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-2); }
 .kv-search-wrap .kv-input { padding-left: 40px; width: 100%; }
@@ -484,12 +544,12 @@ button { font-family: inherit; }
   background: var(--surface); border: 1px solid var(--border);
   transition: transform .3s var(--ease), border-color .3s;
 }
-.kv-feature:hover { transform: translateY(-6px); border-color: rgba(168,85,247,0.4); }
+.kv-feature:hover { transform: translateY(-6px); border-color: rgba(232,28,51,0.4); }
 .kv-feature-icon {
   width: 48px; height: 48px; border-radius: 14px;
   display: grid; place-items: center; margin-bottom: 16px;
   background: var(--accent-grad); color: #fff;
-  box-shadow: 0 8px 20px rgba(168,85,247,0.35);
+  box-shadow: 0 8px 20px rgba(232,28,51,0.35);
 }
 .kv-feature h3 { margin: 0 0 8px; font-size: 1.05rem; }
 .kv-feature p { margin: 0; color: var(--text-2); font-size: 0.88rem; }
@@ -528,7 +588,7 @@ button { font-family: inherit; }
   cursor: pointer; transition: transform .2s var(--ease), border-color .2s, background .2s;
 }
 .kv-ep-item:hover { transform: translateX(6px); border-color: var(--accent-1); background: var(--surface-strong); }
-.kv-ep-item.active { border-color: var(--accent-1); background: rgba(168,85,247,0.12); }
+.kv-ep-item.active { border-color: var(--accent-1); background: rgba(232,28,51,0.12); }
 .kv-ep-num {
   width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
   display: grid; place-items: center; font-weight: 800; font-size: 0.85rem;
@@ -578,7 +638,7 @@ button { font-family: inherit; }
 .kv-progress-fill::after {
   content: ''; position: absolute; right: -6px; top: 50%; transform: translateY(-50%);
   width: 12px; height: 12px; border-radius: 50%; background: #fff;
-  box-shadow: 0 0 8px rgba(168,85,247,0.8);
+  box-shadow: 0 0 8px rgba(232,28,51,0.8);
 }
 .kv-player-row { display: flex; align-items: center; gap: 14px; color: #fff; }
 .kv-player-row .kv-icon-btn { background: transparent; border: none; width: 32px; height: 32px; }
@@ -607,7 +667,7 @@ button { font-family: inherit; }
 .kv-profile-avatar {
   width: 84px; height: 84px; border-radius: 50%;
   display: grid; place-items: center; background: var(--accent-grad); color: #fff;
-  box-shadow: 0 0 30px rgba(168,85,247,0.4); flex-shrink: 0;
+  box-shadow: 0 0 30px rgba(232,28,51,0.4); flex-shrink: 0;
 }
 .kv-profile-head h1 { margin: 0 0 4px; font-size: 1.5rem; }
 .kv-profile-head p { margin: 0; color: var(--text-2); }
@@ -665,7 +725,7 @@ button { font-family: inherit; }
 .kv-table-wrap { overflow-x: auto; border-radius: var(--radius-md); border: 1px solid var(--border); }
 
 .kv-role-pill { padding: 3px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; }
-.kv-role-pill.admin { background: rgba(168,85,247,0.2); color: #d8b4fe; }
+.kv-role-pill.admin { background: rgba(232,28,51,0.22); color: #ffb4b4; }
 .kv-role-pill.user { background: var(--surface-strong); color: var(--text-1); }
 
 .kv-modal-backdrop {

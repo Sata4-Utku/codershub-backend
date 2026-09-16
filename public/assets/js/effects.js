@@ -6,18 +6,10 @@ function kvInitBackground() {
   bg.innerHTML = '<canvas id="kv-stars"></canvas>';
   document.body.prepend(bg);
 
-  ['o1', 'o2', 'o3'].forEach((c) => {
+  ['o1', 'o2'].forEach((c) => {
     const orb = document.createElement('div');
     orb.className = 'kv-orb ' + c;
     document.body.prepend(orb);
-  });
-
-  const glow = document.createElement('div');
-  glow.className = 'kv-cursor-glow';
-  document.body.appendChild(glow);
-  window.addEventListener('mousemove', (e) => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
   });
 
   kvStarfield(document.getElementById('kv-stars'));
@@ -27,18 +19,18 @@ function kvStarfield(canvas) {
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let w, h, embers;
-  const palette = ['#ff5555', '#e81c33', '#ff8a65', '#fca5a5'];
+  const palette = ['#ff5555', '#e81c33'];
 
   function resize() {
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
-    const count = Math.floor((w * h) / 11000);
+    const count = Math.floor((w * h) / 22000);
     embers = Array.from({ length: count }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
-      r: Math.random() * 1.6 + 0.4,
-      speed: Math.random() * 0.35 + 0.08,
-      drift: (Math.random() - 0.5) * 0.3,
+      r: Math.random() * 1.3 + 0.3,
+      speed: Math.random() * 0.22 + 0.05,
+      drift: (Math.random() - 0.5) * 0.2,
       twinkle: Math.random() * Math.PI * 2,
       color: palette[Math.floor(Math.random() * palette.length)]
     }));
@@ -47,8 +39,8 @@ function kvStarfield(canvas) {
   function draw() {
     ctx.clearRect(0, 0, w, h);
     for (const s of embers) {
-      s.twinkle += 0.025;
-      const alpha = 0.25 + Math.sin(s.twinkle) * 0.3;
+      s.twinkle += 0.02;
+      const alpha = 0.12 + Math.sin(s.twinkle) * 0.14;
       ctx.globalAlpha = Math.max(0, alpha);
       ctx.fillStyle = s.color;
       ctx.beginPath();
@@ -82,7 +74,7 @@ function kvInitCardTilt() {
     const rect = card.getBoundingClientRect();
     const px = (e.clientX - rect.left) / rect.width - 0.5;
     const py = (e.clientY - rect.top) / rect.height - 0.5;
-    card.style.transform = `perspective(700px) rotateX(${(-py * 8).toFixed(2)}deg) rotateY(${(px * 10).toFixed(2)}deg) translateY(-8px) scale(1.02)`;
+    card.style.transform = `perspective(800px) rotateX(${(-py * 5).toFixed(2)}deg) rotateY(${(px * 6).toFixed(2)}deg) translateY(-6px) scale(1.015)`;
   });
 
   document.addEventListener('pointerleave', (e) => {
@@ -199,7 +191,14 @@ function kvCardInAnim(container) {
   cards.forEach((card, i) => {
     // kv-visible burada dogrudan verilir: kart kv-reveal tasisa da tasimasa da,
     // IntersectionObserver'in ayrica cagrilmasini beklemeden goruntulenir.
-    setTimeout(() => { card.classList.add('kv-in'); card.classList.add('kv-visible'); }, i * 60);
+    setTimeout(() => {
+      card.classList.add('kv-in');
+      card.classList.add('kv-visible');
+      const canvas = card.querySelector('.kv-card-canvas');
+      if (canvas && typeof kvDrawPoster === 'function') {
+        kvDrawPoster(canvas, canvas.dataset.seed, canvas.dataset.icon, canvas.dataset.accent);
+      }
+    }, i * 60);
   });
 }
 

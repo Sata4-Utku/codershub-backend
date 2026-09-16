@@ -10,17 +10,13 @@ function kvAnimeCardHTML(anime, favIds = []) {
   return `
     <article class="kv-card kv-reveal" data-href="/izle.html?slug=${anime.slug}">
       <div class="kv-card-cover" style="${kvGradientStyle(anime.gradient)}">
-        <span class="kv-card-status">${anime.status}</span>
+        <canvas class="kv-card-canvas" data-seed="${anime.id}" data-icon="${anime.icon}" data-accent="${anime.gradient[0]}"></canvas>
         <span class="kv-card-rating">${kvIcon('star', 13)} ${anime.rating}</span>
-        ${kvIcon(anime.icon, 62)}
         <button class="kv-card-fav ${isFav ? 'active' : ''}" data-fav-type="anime" data-fav-id="${anime.id}" title="Favorilere ekle">${kvIcon('heart', 16)}</button>
       </div>
       <div class="kv-card-body">
         <p class="kv-card-title">${anime.title}</p>
-        <div class="kv-card-meta">
-          ${anime.genres.slice(0, 2).map((g) => `<span class="kv-chip">${g}</span>`).join('')}
-          <span class="kv-chip">${anime.episodes.length} bolum</span>
-        </div>
+        <span class="kv-chip">${anime.genres[0] || ''}</span>
       </div>
     </article>
   `;
@@ -31,17 +27,13 @@ function kvMangaCardHTML(manga, favIds = []) {
   return `
     <article class="kv-card kv-reveal" data-href="/oku.html?slug=${manga.slug}">
       <div class="kv-card-cover" style="${kvGradientStyle(manga.gradient)}">
-        <span class="kv-card-status">${manga.status}</span>
+        <canvas class="kv-card-canvas" data-seed="${manga.id}" data-icon="${manga.icon}" data-accent="${manga.gradient[0]}"></canvas>
         <span class="kv-card-rating">${kvIcon('star', 13)} ${manga.rating}</span>
-        ${kvIcon(manga.icon, 62)}
         <button class="kv-card-fav ${isFav ? 'active' : ''}" data-fav-type="manga" data-fav-id="${manga.id}" title="Favorilere ekle">${kvIcon('heart', 16)}</button>
       </div>
       <div class="kv-card-body">
         <p class="kv-card-title">${manga.title}</p>
-        <div class="kv-card-meta">
-          ${manga.genres.slice(0, 2).map((g) => `<span class="kv-chip">${g}</span>`).join('')}
-          <span class="kv-chip">${manga.chapters.length} bolum</span>
-        </div>
+        <span class="kv-chip">${manga.genres[0] || ''}</span>
       </div>
     </article>
   `;

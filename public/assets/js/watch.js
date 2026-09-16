@@ -51,7 +51,7 @@ async function kvInitWatch() {
   document.getElementById('kv-detail-banner').style.background = `linear-gradient(120deg, ${c1}, ${c2})`;
   const cover = document.getElementById('kv-detail-cover');
   cover.style.background = `linear-gradient(150deg, ${c1}, ${c2})`;
-  cover.innerHTML = kvIcon(anime.icon, 90);
+  kvDrawPoster(document.getElementById('kv-detail-cover-canvas'), anime.id, anime.icon, c1);
 
   const isFav = favIds.includes(anime.id);
   document.getElementById('kv-detail-info').innerHTML = `

@@ -69,46 +69,27 @@ button { font-family: inherit; }
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(ellipse 60% 40% at 15% 10%, rgba(232, 28, 51, 0.2), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 20%, rgba(122, 12, 20, 0.22), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(180, 20, 30, 0.16), transparent 60%),
+    radial-gradient(ellipse 55% 35% at 15% 8%, rgba(232, 28, 51, 0.14), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 90%, rgba(122, 12, 20, 0.16), transparent 60%),
     var(--bg-0);
 }
-.kv-bg canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.55; }
+.kv-bg canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.45; }
 
 .kv-orb {
   position: fixed;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.35;
+  filter: blur(90px);
+  opacity: 0.22;
   z-index: -1;
   pointer-events: none;
-  animation: kv-float 14s ease-in-out infinite;
+  animation: kv-float 16s ease-in-out infinite;
 }
-.kv-orb.o1 { width: 380px; height: 380px; background: var(--accent-1); top: -120px; left: -100px; }
-.kv-orb.o2 { width: 320px; height: 320px; background: var(--accent-3); bottom: -100px; right: -80px; animation-delay: -6s; }
-.kv-orb.o3 { width: 260px; height: 260px; background: var(--accent-2); top: 40%; left: 60%; animation-delay: -3s; }
+.kv-orb.o1 { width: 360px; height: 360px; background: var(--accent-1); top: -120px; left: -100px; }
+.kv-orb.o2 { width: 300px; height: 300px; background: var(--accent-2); bottom: -100px; right: -80px; animation-delay: -6s; }
 
 @keyframes kv-float {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(30px, -40px) scale(1.08); }
-}
-
-/* Ozel imlec parlamasi */
-.kv-cursor-glow {
-  position: fixed;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  background: radial-gradient(circle, rgba(232, 28, 51, 0.18), transparent 70%);
-  transform: translate(-50%, -50%);
-  transition: opacity 0.3s ease;
-  opacity: 0;
-}
-@media (hover: hover) and (pointer: fine) {
-  .kv-cursor-glow { opacity: 1; }
+  50% { transform: translate(24px, -30px) scale(1.06); }
 }
 
 /* ---------- Layout ---------- */
@@ -201,12 +182,8 @@ button { font-family: inherit; }
   transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease), background 0.22s, border-color .2s;
   white-space: nowrap;
 }
-.kv-btn-primary { background: var(--accent-grad); color: #fff; box-shadow: 0 8px 24px rgba(232,28,51,0.35); animation: kv-btn-pulse 2.8s ease-in-out infinite; }
-.kv-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(232,28,51,0.6); animation-play-state: paused; }
-@keyframes kv-btn-pulse {
-  0%, 100% { box-shadow: 0 8px 24px rgba(232,28,51,0.3); }
-  50% { box-shadow: 0 8px 28px rgba(232,28,51,0.6); }
-}
+.kv-btn-primary { background: var(--accent-grad); color: #fff; box-shadow: 0 8px 24px rgba(232,28,51,0.32); }
+.kv-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(232,28,51,0.55); }
 .kv-btn-ghost { background: var(--surface); color: var(--text-0); border-color: var(--border); }
 .kv-btn-ghost:hover { border-color: var(--accent-1); transform: translateY(-2px); }
 .kv-btn-danger { background: rgba(244,63,94,0.15); color: #fda4af; border-color: rgba(244,63,94,0.35); }
@@ -264,58 +241,21 @@ button { font-family: inherit; }
 }
 @keyframes kv-ripple { to { transform: scale(3); opacity: 0; } }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (poster arka planli banner) ---------- */
 .kv-hero {
-  padding: 90px 0 60px;
   position: relative;
   overflow: hidden;
 }
-
-/* Ozgun gorsel: hilal ay + kilic siluet illustrasyonu */
-.kv-hero-art {
-  position: absolute;
-  top: 50%; right: -60px;
-  transform: translateY(-50%);
-  width: min(46vw, 460px);
-  opacity: 0.85;
-  z-index: 0;
-  pointer-events: none;
-  filter: drop-shadow(0 0 50px rgba(232, 28, 51, 0.35));
-  animation: kv-hero-art-float 9s ease-in-out infinite;
+.kv-hero-backdrop { position: absolute; inset: 0; z-index: 0; }
+.kv-hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.kv-hero-scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(6,3,3,0.5), rgba(6,3,3,0.72) 55%, var(--bg-0) 100%);
 }
-.kv-hero-moon { animation: kv-moon-glow 4s ease-in-out infinite; transform-origin: center; }
-.kv-hero-blade { animation: kv-blade-glint 3.2s ease-in-out infinite; transform-origin: center; }
-.kv-hero-embers circle {
-  animation: kv-ember-rise 3.6s ease-in infinite;
-  transform-origin: center;
+.kv-hero-inner {
+  position: relative; z-index: 2;
+  max-width: 1240px; margin: 0 auto; padding: 100px 20px 64px; text-align: center;
 }
-.kv-hero-embers circle:nth-child(1) { animation-delay: 0s; }
-.kv-hero-embers circle:nth-child(2) { animation-delay: .5s; }
-.kv-hero-embers circle:nth-child(3) { animation-delay: 1s; }
-.kv-hero-embers circle:nth-child(4) { animation-delay: 1.5s; }
-.kv-hero-embers circle:nth-child(5) { animation-delay: 2s; }
-.kv-hero-embers circle:nth-child(6) { animation-delay: 2.5s; }
-.kv-hero-embers circle:nth-child(7) { animation-delay: 3s; }
-
-@keyframes kv-hero-art-float {
-  0%, 100% { transform: translateY(-50%) rotate(0deg); }
-  50% { transform: translateY(-54%) rotate(-1.5deg); }
-}
-@keyframes kv-moon-glow {
-  0%, 100% { filter: drop-shadow(0 0 4px rgba(255,85,85,0.5)); }
-  50% { filter: drop-shadow(0 0 22px rgba(255,85,85,0.9)); }
-}
-@keyframes kv-blade-glint {
-  0%, 100% { opacity: 0.85; }
-  50% { opacity: 1; filter: drop-shadow(0 0 10px rgba(255,240,240,0.8)); }
-}
-@keyframes kv-ember-rise {
-  0% { transform: translateY(0) scale(1); opacity: 0; }
-  15% { opacity: 1; }
-  100% { transform: translateY(-90px) scale(0.3); opacity: 0; }
-}
-@media (max-width: 900px) { .kv-hero-art { display: none; } }
-.kv-hero-inner { max-width: 1240px; margin: 0 auto; padding: 0 20px; text-align: center; }
 .kv-hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 7px 16px; border-radius: 999px;
@@ -400,19 +340,17 @@ button { font-family: inherit; }
 .kv-card-cover {
   aspect-ratio: 3/4;
   position: relative;
-  display: grid; place-items: center;
   overflow: hidden;
 }
-.kv-card-cover::before {
-  content: ''; position: absolute; inset: 0;
-  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.06) 0 2px, transparent 2px 26px);
+.kv-card-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  transition: transform .4s var(--ease);
 }
+.kv-card:hover .kv-card-canvas { transform: scale(1.08); }
 .kv-card-cover::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent 55%);
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 55%);
 }
-.kv-card-cover .kv-icon { position: relative; z-index: 1; color: rgba(255,255,255,0.9); filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); transition: transform .4s var(--ease); }
-.kv-card:hover .kv-card-cover .kv-icon { transform: scale(1.15) rotate(-4deg); }
 
 .kv-card-rating {
   position: absolute; top: 10px; right: 10px; z-index: 2;
@@ -421,12 +359,6 @@ button { font-family: inherit; }
   font-size: 0.75rem; font-weight: 700;
   display: flex; align-items: center; gap: 4px;
   color: #fde68a;
-}
-.kv-card-status {
-  position: absolute; top: 10px; left: 10px; z-index: 2;
-  padding: 3px 9px; border-radius: 999px;
-  font-size: 0.68rem; font-weight: 700; letter-spacing: .3px;
-  background: rgba(52, 211, 153, 0.18); color: #6ee7b7; border: 1px solid rgba(52,211,153,0.3);
 }
 .kv-card-fav {
   position: absolute; bottom: 10px; right: 10px; z-index: 2;
@@ -566,11 +498,11 @@ button { font-family: inherit; }
 @media (max-width: 760px) { .kv-detail-grid { grid-template-columns: 1fr; } }
 .kv-detail-cover {
   aspect-ratio: 3/4; border-radius: var(--radius-lg);
-  display: grid; place-items: center; position: relative; overflow: hidden;
+  position: relative; overflow: hidden;
   box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   animation: kv-fade-up 0.7s var(--ease) both;
 }
-.kv-detail-cover .kv-icon { color: #fff; filter: drop-shadow(0 6px 16px rgba(0,0,0,0.4)); }
+.kv-detail-cover canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .kv-detail-info { animation: kv-fade-up 0.7s var(--ease) both 0.1s; }
 .kv-detail-info h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0 0 10px; }
 .kv-detail-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }

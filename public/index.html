@@ -13,44 +13,21 @@
 
   <main class="kv-page-enter">
     <section class="kv-hero">
-      <svg class="kv-hero-art" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="moonGrad" x1="160" y1="60" x2="320" y2="320" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#ff5555"/>
-            <stop offset="1" stop-color="#3f0509"/>
-          </linearGradient>
-          <linearGradient id="bladeGrad" x1="120" y1="140" x2="360" y2="380" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#fff0f0"/>
-            <stop offset="1" stop-color="#e81c33"/>
-          </linearGradient>
-        </defs>
-        <path class="kv-hero-moon" d="M300 70c-77 0-139 62-139 139s62 139 139 139c28 0 54-8 76-22-11 3-22 5-34 5-77 0-139-62-139-139 0-35 13-67 35-91C262 72.7 281 70 300 70z" fill="url(#moonGrad)"/>
-        <g class="kv-hero-blade">
-          <line x1="110" y1="390" x2="370" y2="130" stroke="url(#bladeGrad)" stroke-width="9" stroke-linecap="round"/>
-          <path d="M366 96l30 18-18 30-24-22z" fill="#e81c33"/>
-          <rect x="118" y="372" width="34" height="10" rx="4" transform="rotate(-45 118 372)" fill="#170a0a"/>
-        </g>
-        <g class="kv-hero-embers" fill="#ff5555">
-          <circle cx="95" cy="330" r="4"/>
-          <circle cx="140" cy="260" r="3"/>
-          <circle cx="70" cy="200" r="2.5"/>
-          <circle cx="380" cy="300" r="3.5"/>
-          <circle cx="410" cy="220" r="2.5"/>
-          <circle cx="340" cy="400" r="3"/>
-          <circle cx="200" cy="420" r="2.5"/>
-        </g>
-      </svg>
+      <div class="kv-hero-backdrop" id="kv-hero-backdrop" style="background: linear-gradient(150deg, #7a0c14, #170a0a);">
+        <canvas class="kv-hero-canvas" id="kv-hero-canvas"></canvas>
+      </div>
+      <div class="kv-hero-scrim"></div>
       <div class="kv-hero-inner">
-        <span class="kv-hero-badge">✨ Tamamen ozgun kurgusal evren</span>
-        <h1>Karanlikta parlayan<br /><span class="grad">anime &amp; manga</span> deneyimi</h1>
-        <p>Anidox; kesfedilmeyi bekleyen ozgun animeler ve mangalarla dolu, koyu temali, akici animasyonlu bir platform. Izle, oku, seviye atla.</p>
+        <span class="kv-hero-badge">✨ Ozgun kurgusal evren</span>
+        <h1>Karanlikta parlayan<br /><span class="grad">anime &amp; manga</span></h1>
+        <p>Izle, oku, seviye atla.</p>
         <div class="kv-hero-actions">
           <a href="/anime.html" class="kv-btn kv-btn-primary">Izlemeye Basla</a>
           <a href="/manga.html" class="kv-btn kv-btn-ghost">Manga Kesfet</a>
         </div>
         <div class="kv-stats-strip" id="kv-home-stats">
-          <div class="kv-stat"><strong id="stat-anime">0</strong><span>Anime Serisi</span></div>
-          <div class="kv-stat"><strong id="stat-manga">0</strong><span>Manga Serisi</span></div>
+          <div class="kv-stat"><strong id="stat-anime">0</strong><span>Anime</span></div>
+          <div class="kv-stat"><strong id="stat-manga">0</strong><span>Manga</span></div>
           <div class="kv-stat"><strong id="stat-ep">0</strong><span>Bolum</span></div>
           <div class="kv-stat"><strong id="stat-genre">0</strong><span>Tur</span></div>
         </div>
@@ -128,6 +105,7 @@
   <script src="/assets/js/api.js"></script>
   <script src="/assets/js/effects.js"></script>
   <script src="/assets/js/cards.js"></script>
+  <script src="/assets/js/poster.js"></script>
   <script src="/assets/js/mood.js"></script>
   <script src="/assets/js/layout.js"></script>
   <script src="/assets/js/home.js"></script>

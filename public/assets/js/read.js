@@ -14,29 +14,7 @@ const KV_PANEL_TEMPLATES = [
   [{ x: 0, y: 0, w: 1, h: 0.48 }, { x: 0, y: 0.5, w: 1, h: 0.5 }]
 ];
 
-function kvSeededRandom(seed) {
-  let s = seed % 2147483647;
-  if (s <= 0) s += 2147483646;
-  return function () {
-    s = (s * 16807) % 2147483647;
-    return (s - 1) / 2147483646;
-  };
-}
-
-function kvHexToRgb(hex) {
-  const h = hex.replace('#', '');
-  const v = h.length === 3 ? h.split('').map((c) => c + c).join('') : h;
-  const num = parseInt(v, 16);
-  return [(num >> 16) & 255, (num >> 8) & 255, num & 255];
-}
-
-function kvMixColor(c1, c2, t) {
-  const a = kvHexToRgb(c1), b = kvHexToRgb(c2);
-  const r = Math.round(a[0] + (b[0] - a[0]) * t);
-  const g = Math.round(a[1] + (b[1] - a[1]) * t);
-  const bl = Math.round(a[2] + (b[2] - a[2]) * t);
-  return `rgb(${r},${g},${bl})`;
-}
+// kvSeededRandom / kvHexToRgb / kvMixColor / kvIconPathD: assets/js/poster.js icinde tanimli
 
 function drawMangaPage(canvas, seed, gradient, icon) {
   const rect = canvas.parentElement.getBoundingClientRect();
@@ -108,7 +86,7 @@ function drawMangaPage(canvas, seed, gradient, icon) {
     ctx.scale(Math.min(pw, ph) / 90, Math.min(pw, ph) / 90);
     ctx.strokeStyle = '#fff';
     ctx.lineWidth = 3;
-    ctx.stroke(new Path2D(KV_ICON_PATHS[icon] || KV_ICON_PATHS.star));
+    ctx.stroke(new Path2D(kvIconPathD(icon)));
     ctx.restore();
 
     ctx.restore();
@@ -158,15 +136,6 @@ function kvRoundRect(ctx, x, y, w, h, r) {
   ctx.closePath();
 }
 
-const KV_ICON_PATHS = {
-  sword: 'M4 20L15 9M15 9l2.5-2.5a1.5 1.5 0 0 1 2.12 0l.88.88a1.5 1.5 0 0 1 0 2.12L18 12M15 9l3 3M6 18l2 2M4.5 19.5l1-1',
-  moon: 'M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z',
-  flower: 'M12 3.5c1.8 0 3 1.6 3 3.4 0-1.8 1.6-3 3.4-3s3 1.6 3 3.4-1.6 3-3.4 3c1.8 0 3 1.6 3 3.4s-1.6 3-3.4 3c0-1.8-1.6-3-3.4-3',
-  flame: 'M12 2s5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 1-3s.5 2 2 2c-1-2 0-4 2-4.5C11.5 8 11 10 12 11c0-3 0-6 0-9z',
-  star: 'M12 2l2.6 6.6 7 .5-5.4 4.5 1.8 6.9L12 16.9 5.9 20.5l1.9-6.9L2.4 9.1l7-.5z',
-  mask: 'M4 8c2-2 5-3 8-3s6 1 8 3c0 6-3 11-8 12-5-1-8-6-8-12z'
-};
-
 async function kvInitReader() {
   const slug = new URLSearchParams(window.location.search).get('slug');
   if (!slug) return;
@@ -196,7 +165,7 @@ async function kvInitReader() {
   document.getElementById('kv-detail-banner').style.background = `linear-gradient(120deg, ${c1}, ${c2})`;
   const cover = document.getElementById('kv-detail-cover');
   cover.style.background = `linear-gradient(150deg, ${c1}, ${c2})`;
-  cover.innerHTML = kvIcon(manga.icon, 90);
+  kvDrawPoster(document.getElementById('kv-detail-cover-canvas'), manga.id, manga.icon, c1);
 
   const isFav = favIds.includes(manga.id);
   document.getElementById('kv-detail-info').innerHTML = `

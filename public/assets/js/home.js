@@ -40,9 +40,20 @@ async function kvInitHome() {
   kvObserveNewReveals(trendManga);
   kvCardInAnim(trendManga);
 
+  kvRenderHeroBanner(anime);
   kvRenderMoodPicker(anime, manga);
   kvRenderTicker();
   kvRenderFeatures();
+}
+
+function kvRenderHeroBanner(anime) {
+  if (!anime.length) return;
+  const featured = [...anime].sort((a, b) => b.rating - a.rating)[0];
+  const [c1, c2] = featured.gradient;
+  const backdrop = document.getElementById('kv-hero-backdrop');
+  if (backdrop) backdrop.style.background = `linear-gradient(150deg, ${c1}, ${c2})`;
+  const canvas = document.getElementById('kv-hero-canvas');
+  if (canvas) kvDrawPoster(canvas, featured.id, featured.icon, c1);
 }
 
 function kvAnimateNumber(id, target) {
